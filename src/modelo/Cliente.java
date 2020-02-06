@@ -1,12 +1,12 @@
 package modelo;
 
 public class Cliente {
-    String radicado,cedula,nombre,correo,dependencia;
-    String lvlSatisfaccion,repServicio;
+    static String radicado,cedula,nombre,correo,dependencia;
+    static String lvlSatisfaccion,repServicio;
     
     
     
-    //Creamos los getter y los setter
+    //Cambiar los getter y los setter, y los atributos
 
     public String getRadicado() {
         return radicado;
