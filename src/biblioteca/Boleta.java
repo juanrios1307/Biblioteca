@@ -8,6 +8,7 @@ public class Boleta {
 	private Date fechaPrestamo;
 	private Date fechaEntrega;
 	private String cedulaUsuario;
+	private Ejemplar ejem;
 	
 	public Boleta(String nombreUsuario, Date fechaPrestamo,Date fechaEntrega,String cedulaUsuario) {
 		this.nombreUsuario=nombreUsuario;
