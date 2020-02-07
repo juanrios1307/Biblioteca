@@ -6,7 +6,7 @@ public class Bibliotecario {
 	
 	DAO dao=new DAO();
 	
-	 public String addBoleta(Boleta b) {
+	 public boolean addBoleta(Boleta b) {
 	    return dao.addBoleta(b);	
 	 } 
 	 public Libro buscarLibro(String isbn) {

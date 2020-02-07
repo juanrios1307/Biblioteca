@@ -8,9 +8,16 @@ public class Boleta {
 	private Date fechaPrestamo;
 	private Date fechaEntrega;
 	private String cedulaUsuario;
-
+	private String codigo;
 	private boolean estado;
-
+	
+	
+	public String getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
 	public String getNombreUsuario() {
 		return nombreUsuario;
 	}
@@ -41,5 +48,11 @@ public class Boleta {
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
+	
+	public java.sql.Date convert(Date uDate) {
+        java.sql.Date sDate = new java.sql.Date(uDate.getTime());
+        return sDate;
+    }
+	
 
 }

@@ -38,7 +38,7 @@ public class ConexionBD {
     public String conectarBD(){
         
     	//Cambiar datos Conexion
-    	String url="jdbc:mysql://localhost:3306/usuariosalcaldia"; 
+    	String url="jdbc:mysql://localhost:3306/biblioteca"; //Cambiar url y login
         String user="root";
         String password="";
         
