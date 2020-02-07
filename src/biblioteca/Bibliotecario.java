@@ -2,25 +2,23 @@ package biblioteca;
 
 import com.sun.javafx.collections.MappingChange.Map;
 
+import modelo.DAO;
+
 public class Bibliotecario {
 	
-	private Libro[] libros;
-	private Boleta[] boletasActuales;
-	private Boleta[] boletasInactivas;
+	DAO dao=new DAO();
 	
-	public Bibliotecario(Libro[] libros, Boleta[] boletasActuales, Boleta[] boletasInactivas) {
-		this.libros = libros;
-		this.boletasActuales = boletasActuales;
-		this.boletasInactivas = boletasInactivas;
-	}
-
-	private boolean prestamo(String nombreUsuario, String cedula, String nombreLibro) {
-		return true;
-	}
-	
-	private boolean devolucion(String codigoEjemplar) {
-		return true;
-	}
-	
+	 public String addBoleta(Boleta b) {
+	    return dao.addBoleta(b);	
+	 } 
+	 public Libro buscarLibro(String isbn) {
+		 return dao.buscarLibro(isbn);
+	 }
+	 public boolean prestarLibro(String isbn,String cedula) {
+		 return dao.prestarLibro(isbn,cedula);
+	 }
+	 public boolean devolverLibro(String isbn,String cedula) {
+		 return dao.devolverLibro(isbn,cedula);
+	 }
 	
 }
