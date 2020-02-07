@@ -2,7 +2,7 @@ package modelo;
 
 public class SQLHelper {
 	 
-	 
+
    
     //Cambiar consultas
     public String addBoleta() {
@@ -10,6 +10,7 @@ public class SQLHelper {
     }
     
     public String buscarLibro(String isbn) {
+
     	return "SELECT * FROM radicadodatos WHERE radicado = '"+isbn+"';";
     }
     public String prestarLibro(String isbn,String cedula) {
@@ -18,5 +19,6 @@ public class SQLHelper {
     public String devolverLibro(String isbn,String cedula) {
     	return "SS";
     }
+ 
 
 }

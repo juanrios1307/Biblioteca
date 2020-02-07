@@ -13,7 +13,6 @@ public class DAO {
     //Realizar metodos pertinentes y borrar lo que no sirve
     public String addBoleta(Boleta b) {
     	try {
-            
             PreparedStatement stm= con.getCon().prepareStatement(sql.addBoleta());
             
             
@@ -68,12 +67,13 @@ public class DAO {
             } catch (Exception e) {
             }
         }
+
         return true;
     	}//cierro prestar
     
-    
+ 
     public boolean devolverLibro(String isbn,String cedula) {
-    	try {
+    		try {
             
             PreparedStatement stm= con.getCon().prepareStatement(sql.devolverLibro(isbn,cedula));
             ResultSet rs=stm.executeQuery();
@@ -90,9 +90,8 @@ public class DAO {
         }
         return true;
     	}//cierro prestar
-    
 
-    
+     
 }
     
 

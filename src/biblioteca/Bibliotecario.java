@@ -1,7 +1,5 @@
 package biblioteca;
 
-import com.sun.javafx.collections.MappingChange.Map;
-
 import modelo.DAO;
 
 public class Bibliotecario {
@@ -20,5 +18,5 @@ public class Bibliotecario {
 	 public boolean devolverLibro(String isbn,String cedula) {
 		 return dao.devolverLibro(isbn,cedula);
 	 }
-	
+
 }

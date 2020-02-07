@@ -8,8 +8,9 @@ public class Boleta {
 	private Date fechaPrestamo;
 	private Date fechaEntrega;
 	private String cedulaUsuario;
+
 	private boolean estado;
-	
+
 	public String getNombreUsuario() {
 		return nombreUsuario;
 	}
@@ -40,6 +41,5 @@ public class Boleta {
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
-	
-	
+
 }
