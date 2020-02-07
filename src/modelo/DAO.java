@@ -29,7 +29,7 @@ public class DAO {
    
     }
     
-    public Libro buscarLibro(String isbn) {
+    public String buscarLibro(String isbn) {
     	 try {
              
              PreparedStatement stm= con.getCon().prepareStatement(sql.buscarLibro(isbn));
