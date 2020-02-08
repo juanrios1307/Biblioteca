@@ -71,7 +71,7 @@ public class DAO {
     public boolean prestarLibro(String isbn,String cedula) {
     	try {
     		System.out.println("libro;: "+libro.isDisponible());
-            if(libro.isDisponible()) {
+            if(libro.buscarLibro(isbn).isDisponible()) {
             	 PreparedStatement stm= con.getCon().prepareStatement(sql.prestarLibro(isbn,cedula));
                  ResultSet rs=stm.executeQuery();
                  
@@ -79,7 +79,7 @@ public class DAO {
                  
              
                  stm.executeUpdate();
-                 System.out.println("Se actualizó correctamente el registro");
+                 System.out.println("Se actualizÃ³ correctamente el registro");
                  return true;
             }
              
@@ -104,7 +104,7 @@ public class DAO {
             
             stm.setBoolean(5, libro.isDisponible());
             
-            System.out.println("Se actualizó correctamente el registro");
+            System.out.println("Se actualizÃ³ correctamente el registro");
             return true;
            
             
