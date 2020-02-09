@@ -71,7 +71,7 @@ public class DAO {
     public boolean prestarLibro(String isbn,String cedula) {
     	try {
     		System.out.println("libro;: "+libro.isDisponible());
-            if(libro.buscarLibro(isbn).isDisponible()) {
+            if(buscarLibro(isbn).isDisponible()) {
             	 PreparedStatement stm= con.getCon().prepareStatement(sql.prestarLibro(isbn,cedula));
                  ResultSet rs=stm.executeQuery();
                  
