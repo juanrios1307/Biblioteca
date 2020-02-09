@@ -26,7 +26,7 @@ public class Principal {
 		
 		//bi.prestarLibro("3322", "1545");
 		
-		bi.devolverLibro("3322", "1545");
+		bi.prestarLibro("3322", "1545");
 		
 	}
 

@@ -7,7 +7,7 @@ public class SQLHelper {
    
     //Cambiar consultas
     public String addBoleta() {
-    	 return "INSERT INTO "+tablaBoleta+" (cedula,nombre,codigo,fechaPrestamo,fechaEntrega,estado) VALUES (?,?,?,?,?,?);";
+    	 return "INSERT INTO "+tablaBoleta+" (codigoBoleta,cedula,nombre,codigo,nombreLibro,fechaPrestamo,fechaEntrega,estado) VALUES (?,?,?,?,?,?);";
     }
     
     public String buscarLibro(String isbn) {

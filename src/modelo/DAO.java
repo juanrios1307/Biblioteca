@@ -16,12 +16,14 @@ public class DAO {
     	try {
             PreparedStatement stm= con.getCon().prepareStatement(sql.addBoleta());
             
-            stm.setString(1, b.getCedulaUsuario());
-            stm.setString(2, b.getNombreUsuario());
-            stm.setString(3, b.getCodigo());
-            stm.setDate(4,  b.convert(b.getFechaPrestamo()));
-            stm.setDate(5, b.convert(b.getFechaEntrega()));
-            stm.setBoolean(6, b.isEstado());
+            stm.setString(1, b.getCodigoBoleta());
+            stm.setString(2, b.getCedulaUsuario());
+            stm.setString(3, b.getNombreUsuario());
+            stm.setString(4, b.getCodigo());
+            stm.setString(5, b.getNombreLibro());
+            stm.setDate(6,  b.convert(b.getFechaPrestamo()));
+            stm.setDate(7, b.convert(b.getFechaEntrega()));
+            stm.setBoolean(8, b.isEstado());
             stm.execute();
             System.out.println("Registro exitoso");
             

@@ -9,9 +9,24 @@ public class Boleta {
 	private Date fechaEntrega;
 	private String cedulaUsuario;
 	private String codigo;
+	private String codigoBoleta;
+	private String nombreLibro;
 	private boolean estado;
 	
 	
+	
+	public String getCodigoBoleta() {
+		return codigoBoleta;
+	}
+	public void setCodigoBoleta(String codigoBoleta) {
+		this.codigoBoleta = codigoBoleta;
+	}
+	public String getNombreLibro() {
+		return nombreLibro;
+	}
+	public void setNombreLibro(String nombreLibro) {
+		this.nombreLibro = nombreLibro;
+	}
 	public String getCodigo() {
 		return codigo;
 	}
