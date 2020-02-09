@@ -12,6 +12,7 @@ public class Principal {
 		Bibliotecario bi=new Bibliotecario();
 		
 		Boleta b=new Boleta();
+		
 		Date d=new Date();
 		d.getDate();
 		b.setCedulaUsuario("1545");
@@ -21,6 +22,11 @@ public class Principal {
 		b.setFechaPrestamo(d);
 		b.setEstado(true);
 		
+		System.out.println(bi.buscarLibro("3322").isDisponible());
+		
+		//bi.prestarLibro("3322", "1545");
+		
+		bi.devolverLibro("3322", "1545");
 		
 	}
 
