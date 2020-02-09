@@ -7,9 +7,9 @@ import biblioteca.Boleta;
 import biblioteca.Libro;
 
 public class DAO {
-    ConexionBD con=new ConexionBD();
-    Libro libro=new Libro();
-    SQLHelper sql=new SQLHelper();
+    private ConexionBD con=new ConexionBD();
+    private Libro libro=new Libro();
+    private SQLHelper sql=new SQLHelper();
     
     //Realizar metodos pertinentes y borrar lo que no sirve
     public boolean addBoleta(Boleta b) {

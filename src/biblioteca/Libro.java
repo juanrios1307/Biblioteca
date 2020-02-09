@@ -5,7 +5,6 @@ public class Libro {
 	private String autor;
 	private String codigo; //ISBN
 	private String edicion;	
-
 	private boolean disponible;
 
 	public String getNombre() {

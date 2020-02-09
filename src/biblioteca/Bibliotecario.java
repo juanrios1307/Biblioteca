@@ -4,7 +4,7 @@ import modelo.DAO;
 
 public class Bibliotecario {
 	
-	DAO dao=new DAO();
+	private DAO dao=new DAO();
 	
 	 public boolean addBoleta(Boleta b) {
 	    return dao.addBoleta(b);	
