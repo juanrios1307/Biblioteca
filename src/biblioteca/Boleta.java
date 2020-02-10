@@ -8,17 +8,17 @@ public class Boleta {
 	private Date fechaPrestamo;
 	private Date fechaEntrega;
 	private String cedulaUsuario;
-	private String codigo;
-	private String codigoBoleta;
+	private int codigo;
+	private int codigoBoleta;
 	private String nombreLibro;
 	private boolean estado;
 	
 	
 	
-	public String getCodigoBoleta() {
+	public int getCodigoBoleta() {
 		return codigoBoleta;
 	}
-	public void setCodigoBoleta(String codigoBoleta) {
+	public void setCodigoBoleta(int codigoBoleta) {
 		this.codigoBoleta = codigoBoleta;
 	}
 	public String getNombreLibro() {
@@ -27,10 +27,10 @@ public class Boleta {
 	public void setNombreLibro(String nombreLibro) {
 		this.nombreLibro = nombreLibro;
 	}
-	public String getCodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
-	public void setCodigo(String codigo) {
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 	public String getNombreUsuario() {

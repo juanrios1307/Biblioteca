@@ -16,10 +16,10 @@ public class DAO {
     	try {
             PreparedStatement stm= con.getCon().prepareStatement(sql.addBoleta());
             
-            stm.setString(1, b.getCodigoBoleta());
+            stm.setString(1, b.getNombreUsuario());
             stm.setString(2, b.getCedulaUsuario());
-            stm.setString(3, b.getNombreUsuario());
-            stm.setString(4, b.getCodigo());
+            stm.setInt(3, b.getCodigo());
+            stm.setInt(4, b.getCodigoBoleta());
             stm.setString(5, b.getNombreLibro());
             stm.setDate(6,  b.convert(b.getFechaPrestamo()));
             stm.setDate(7, b.convert(b.getFechaEntrega()));
@@ -43,14 +43,14 @@ public class DAO {
    
     
     
-    public Libro buscarLibro(String isbn) {
+    public Libro buscarLibro(int isbn) {
     	 try {
              
              PreparedStatement stm= con.getCon().prepareStatement(sql.buscarLibro(isbn));
              ResultSet rs=stm.executeQuery();
              
              while(rs.next()){
-                 libro.setCodigo(rs.getString(1));
+                 libro.setCodigo(rs.getInt(1));
                  libro.setNombre(rs.getString(2));
                  libro.setAutor(rs.getString(3));
                  libro.setEdicion(rs.getString(4));
@@ -70,7 +70,7 @@ public class DAO {
      	}//cierro buscar 1 persona
     
     
-    public boolean prestarLibro(String isbn,String cedula) {
+    public boolean prestarLibro(int isbn,int cedula) {
     	try {
     		System.out.println("libro;: "+buscarLibro(isbn).isDisponible());
             if(buscarLibro(isbn).isDisponible()) {
@@ -100,7 +100,7 @@ public class DAO {
     	}//cierro prestar
     
  
-    public boolean devolverLibro(String isbn,String cedula) {
+    public boolean devolverLibro(int isbn,int cedula) {
     		try {
             
             PreparedStatement stmL= con.getCon().prepareStatement(sql.devolverLibroTL(isbn));

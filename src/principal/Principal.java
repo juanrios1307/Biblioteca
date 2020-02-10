@@ -13,20 +13,7 @@ public class Principal {
 		
 		Boleta b=new Boleta();
 		
-		Date d=new Date();
-		d.getDate();
-		b.setCedulaUsuario("1545");
-		b.setCodigo("3322");
-		b.setNombreUsuario("Juan");
-		b.setFechaEntrega(d);
-		b.setFechaPrestamo(d);
-		b.setEstado(true);
 		
-		System.out.println(bi.buscarLibro("3322").isDisponible());
-		
-		//bi.prestarLibro("3322", "1545");
-		
-		bi.prestarLibro("3322", "1545");
 		
 	}
 
