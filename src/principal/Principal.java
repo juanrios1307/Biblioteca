@@ -18,18 +18,20 @@ public class Principal {
 		
 		Date d=new Date();
 		d.getDate();
-		b.setCedulaUsuario("1545");
-		b.setCodigo("3322");
+		
 		b.setNombreUsuario("Juan");
+		b.setCedulaUsuario("1234");
+		b.setCodigo(4444);
+		b.setCodigoBoleta(2);
+		b.setNombreLibro("la hormiga");
 		b.setFechaEntrega(d);
 		b.setFechaPrestamo(d);
-		b.setEstado(true);
+		b.setEstado(false);
 		
-		System.out.println(bi.buscarLibro("3322").isDisponible());
+		bi.addBoleta(b);
 		
-		//bi.prestarLibro("3322", "1545");
+		bi.prestarLibro(b.getCodigo(), b.getCodigoBoleta());
 		
-		bi.prestarLibro("3322", "1545");
 		
 	}
 

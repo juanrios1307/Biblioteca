@@ -9,14 +9,14 @@ public class Bibliotecario {
 	 public boolean addBoleta(Boleta b) {
 	    return dao.addBoleta(b);	
 	 } 
-	 public Libro buscarLibro(String isbn) {
+	 public Libro buscarLibro(int isbn) {
 		 return dao.buscarLibro(isbn);
 	 }
-	 public boolean prestarLibro(String isbn,String cedula) {
-		 return dao.prestarLibro(isbn,cedula);
+	 public boolean prestarLibro(int isbn,int codigoBoleta) {
+		 return dao.prestarLibro(isbn,codigoBoleta);
 	 }
-	 public boolean devolverLibro(String isbn,String cedula) {
-		 return dao.devolverLibro(isbn,cedula);
+	 public boolean devolverLibro(int isbn,int codigoBoleta) {
+		 return dao.devolverLibro(isbn,codigoBoleta);
 	 }
 
 }

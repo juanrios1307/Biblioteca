@@ -3,7 +3,7 @@ package biblioteca;
 public class Libro {
 	private String nombre;
 	private String autor;
-	private String codigo; //ISBN
+	private int codigo; //ISBN
 	private String edicion;	
 	private boolean disponible;
 
@@ -19,10 +19,10 @@ public class Libro {
 	public void setAutor(String autor) {
 		this.autor = autor;
 	}
-	public String getCodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
-	public void setCodigo(String codigo) {
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 	public String getEdicion() {

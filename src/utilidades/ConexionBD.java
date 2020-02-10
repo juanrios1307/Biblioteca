@@ -38,9 +38,9 @@ public class ConexionBD {
     public String conectarBD(){
         
     	//Cambiar datos Conexion
-    	String url="jdbc:mysql://localhost:3306/biblioteca"; //Cambiar url y login
-        String user="root";
-        String password="";
+    	String url="jdbc:mysql://sql9.freesqldatabase.com:3306/sql9322078"; //Cambiar url y login
+        String user="sql9322078";
+        String password="U9pUQlMHCd";
         
         try {
             DriverManager.registerDriver(new com.mysql.jdbc.Driver());
@@ -62,7 +62,7 @@ public class ConexionBD {
         ConexionBD c=new ConexionBD();
         
         try {
-
+        	System.out.println("Conectò correctamente");
              
         } catch (Exception e) {
             System.err.println("Excepción: "+e.getMessage());
