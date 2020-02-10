@@ -8,7 +8,7 @@ import biblioteca.Boleta;
 
 public class Interfaz extends JFrame {
 	
-	public Interfaz(Boleta b1) {
+	public Interfaz(Boleta b) {
 		this.setSize(500, 380);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setTitle("Boleta");
@@ -17,7 +17,7 @@ public class Interfaz extends JFrame {
 		this.setLocationRelativeTo(null);
 		this.getContentPane().setBackground(Color.gray);
 		
-		iniciarComponentes(b1);
+		iniciarComponentes(b);
 	}
 	
 	
