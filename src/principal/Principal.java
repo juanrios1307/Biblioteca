@@ -10,6 +10,9 @@ public class Principal {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Bibliotecario bi=new Bibliotecario();
+		Interfaz i1=new Interfaz();
+		
+		i1.setVisible(true);
 		
 		Boleta b=new Boleta();
 		
