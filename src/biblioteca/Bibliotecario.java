@@ -12,11 +12,11 @@ public class Bibliotecario {
 	 public Libro buscarLibro(int isbn) {
 		 return dao.buscarLibro(isbn);
 	 }
-	 public boolean prestarLibro(int isbn,int cedula) {
-		 return dao.prestarLibro(isbn,cedula);
+	 public boolean prestarLibro(int isbn,int codigoBoleta) {
+		 return dao.prestarLibro(isbn,codigoBoleta);
 	 }
-	 public boolean devolverLibro(int isbn,int cedula) {
-		 return dao.devolverLibro(isbn,cedula);
+	 public boolean devolverLibro(int isbn,int codigoBoleta) {
+		 return dao.devolverLibro(isbn,codigoBoleta);
 	 }
 
 }

@@ -13,6 +13,21 @@ public class Principal {
 		
 		Boleta b=new Boleta();
 		
+		Date d=new Date();
+		d.getDate();
+		
+		b.setNombreUsuario("Juan");
+		b.setCedulaUsuario("1234");
+		b.setCodigo(4444);
+		b.setCodigoBoleta(2);
+		b.setNombreLibro("la hormiga");
+		b.setFechaEntrega(d);
+		b.setFechaPrestamo(d);
+		b.setEstado(false);
+		
+		bi.addBoleta(b);
+		
+		bi.prestarLibro(b.getCodigo(), b.getCodigoBoleta());
 		
 		
 	}
