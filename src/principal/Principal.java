@@ -16,14 +16,14 @@ public class Principal {
 				
 				bi.buscarLibro(4444);
 				
-				/*Interfaz i1=new Interfaz(bi.buscarBoleta(1));
+				Interfaz i1=new Interfaz(bi.buscarBoleta(1));
 				
 				Boleta b=new Boleta();
 				
 				Date d=new Date();
 				d.getDate();
 				
-				b.setNombreUsuario("Juan");
+				/*b.setNombreUsuario("Juan");
 				b.setCedulaUsuario("1234");
 				b.setCodigo(4444);
 				b.setCodigoBoleta(2);
@@ -32,13 +32,13 @@ public class Principal {
 				b.setFechaPrestamo(d);
 				b.setEstado(false);
 				
-				bi.addBoleta(b);
+				bi.addBoleta(b);*/
 				
 				i1.setVisible(true);
 				
 				
 				
-				bi.prestarLibro(b.getCodigo(), b.getCodigoBoleta());*/
+				bi.devolverLibro(b.getCodigo(), b.getCodigoBoleta());
 				
 		
 	}

@@ -43,10 +43,15 @@ public class ConexionBD {
     public String conectarBD(){
         
     	//Cambiar datos Conexion
-    	String url="jdbc:mysql://sql9.freesqldatabase.com:3306/sql9322078"; //Cambiar url y login
-        String user="sql9322078";
+    	
+    	String url="jdbc:mysql://sql9.freesqldatabase.com:3306/sql9322078";
+    	String user="sql9322078";
         String password="U9pUQlMHCd";
         
+        
+        /*String url2="jdbc:mysql://localhost:3306/biblioteca"; //Cambiar url y login
+    	String user2="root";
+    	String pwd="";*/
         try {
             DriverManager.registerDriver(new com.mysql.jdbc.Driver());
             setCon(DriverManager.getConnection(url,user,password));                        

@@ -13,11 +13,11 @@ public class SQLHelper {
     
     public String buscarLibro(int isbn) {
 
-    	return bd+"\nSELECT * FROM "+tablaLibro+" WHERE codigo = "+isbn+";";
+    	return "SELECT * FROM "+tablaLibro+" WHERE codigo = '"+isbn+"';";
     }
     public String buscarBoleta(int codBoleta) {
 
-    	return bd+"\nSELECT * FROM "+tablaBoleta+" WHERE codigoboleta = "+codBoleta+";";
+    	return "SELECT * FROM "+tablaBoleta+" WHERE codigoboleta = '"+codBoleta+"';";
     }
     
     public String prestarLibroTL(int isbn) {
