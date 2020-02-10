@@ -9,6 +9,7 @@ import biblioteca.Libro;
 public class DAO {
     private ConexionBD con=new ConexionBD();
     private Libro libro=new Libro();
+    private Boleta boleta=new Boleta();
     private SQLHelper sql=new SQLHelper();
     
     //Realizar metodos pertinentes y borrar lo que no sirve
@@ -38,14 +39,14 @@ public class DAO {
            }
        }
        return false;
-   }//cerrar guardar
+   }//cerrar guardar boleta
    
    
     
     
     public Libro buscarLibro(int isbn) {
     	 try {
-             
+             System.out.println(sql.buscarLibro(isbn));
              PreparedStatement stm= con.getCon().prepareStatement(sql.buscarLibro(isbn));
              ResultSet rs=stm.executeQuery();
              
@@ -56,8 +57,10 @@ public class DAO {
                  libro.setCodigo(rs.getInt(3));
                  libro.setEdicion(rs.getString(4));
                  libro.setDisponible(rs.getBoolean(5));
+                 System.out.println("Libro encontrado");
                  return libro;
              }
+             System.out.println("Libro encontrado 2");
              
          } catch (Exception e) {
              System.err.println("Error al buscar registro: "+e.getMessage());
@@ -68,7 +71,40 @@ public class DAO {
              }
          }
          return null;
-     	}//cierro buscar 1 persona
+     	}//cierro buscar 1 libro
+    
+    public Boleta buscarBoleta(int codBoleta) {
+   	 try {
+            System.out.println(sql.buscarBoleta(codBoleta));
+            PreparedStatement stm= con.getCon().prepareStatement(sql.buscarBoleta(codBoleta));
+            ResultSet rs=stm.executeQuery();
+            
+            while(rs.next()){
+                
+                boleta.setNombreUsuario(rs.getString(1));
+                boleta.setCedulaUsuario(rs.getString(2));
+                boleta.setCodigo(rs.getInt(3));
+                boleta.setCodigoBoleta(rs.getInt(4));
+                boleta.setNombreLibro(rs.getString(5));
+                boleta.setFechaEntrega(rs.getDate(6));
+                boleta.setFechaPrestamo(rs.getDate(7));
+                boleta.setEstado(rs.getBoolean(8));
+                
+                System.out.println("Boleta Encontrada");
+                return boleta;
+            }
+            System.out.println("Boleta Encontrada 2");
+            
+        } catch (Exception e) {
+            System.err.println("Error al buscar registro: "+e.getMessage());
+        }finally{
+            try {
+                con.cerrarBD();
+            } catch (Exception e) {
+            }
+        }
+        return null;
+    	}//cierro buscar 1 boleta
     
     
     public boolean prestarLibro(int isbn,int codigoBoleta) {
@@ -123,7 +159,7 @@ public class DAO {
             }
         }
         return false;
-    	}//cierro prestar
+    	}//cierro devolver
 
      
 }

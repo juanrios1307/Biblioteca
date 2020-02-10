@@ -1,7 +1,6 @@
 package biblioteca;
 
 import modelo.DAO;
-
 public class Bibliotecario {
 	
 	private DAO dao=new DAO();
@@ -11,6 +10,9 @@ public class Bibliotecario {
 	 } 
 	 public Libro buscarLibro(int isbn) {
 		 return dao.buscarLibro(isbn);
+	 }
+	 public Boleta buscarBoleta(int codBoleta) {
+		 return dao.buscarBoleta(codBoleta);
 	 }
 	 public boolean prestarLibro(int isbn,int codigoBoleta) {
 		 return dao.prestarLibro(isbn,codigoBoleta);

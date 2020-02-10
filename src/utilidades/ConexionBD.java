@@ -32,6 +32,11 @@ public class ConexionBD {
         conectarBD();
         return con;
     }
+    
+    public void estadoCon() {
+    	System.out.println(conectarBD());
+    }
+    
     public void setCon(Connection con){
         this.con=con;
     }
@@ -62,7 +67,7 @@ public class ConexionBD {
         ConexionBD c=new ConexionBD();
         
         try {
-        	System.out.println("Conectò correctamente");
+        	c.estadoCon();
              
         } catch (Exception e) {
             System.err.println("Excepción: "+e.getMessage());

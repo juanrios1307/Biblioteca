@@ -4,6 +4,7 @@ public class SQLHelper {
 	 
 	final String tablaLibro="libro";
 	final String tablaBoleta="boleta";
+	final String bd="use sql9322078;";
    
     //Cambiar consultas
     public String addBoleta() {
@@ -12,8 +13,13 @@ public class SQLHelper {
     
     public String buscarLibro(int isbn) {
 
-    	return "SELECT * FROM "+tablaLibro+" WHERE codigo = '"+isbn+"';";
+    	return bd+"\nSELECT * FROM "+tablaLibro+" WHERE codigo = "+isbn+";";
     }
+    public String buscarBoleta(int codBoleta) {
+
+    	return bd+"\nSELECT * FROM "+tablaBoleta+" WHERE codigoboleta = "+codBoleta+";";
+    }
+    
     public String prestarLibroTL(int isbn) {
     	 return "UPDATE "+tablaLibro+" SET disponibilidad=0 WHERE codigo= '"+isbn+"';";
     }
