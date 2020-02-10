@@ -42,7 +42,6 @@ public class ConexionBD {
     }
     public String conectarBD(){
         
-    	//Cambiar datos Conexion
     	
     	String url="jdbc:mysql://sql9.freesqldatabase.com:3306/sql9322078";
     	String user="sql9322078";

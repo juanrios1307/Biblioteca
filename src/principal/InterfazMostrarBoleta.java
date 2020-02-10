@@ -1,14 +1,17 @@
 package principal;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+import biblioteca.Bibliotecario;
 import biblioteca.Boleta;
 
-public class Interfaz extends JFrame {
+public class InterfazMostrarBoleta extends JFrame {
 	
-	public Interfaz(Boleta b) {
+	public InterfazMostrarBoleta(Boleta b) {
 		this.setSize(500, 380);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setTitle("Boleta");
@@ -20,7 +23,7 @@ public class Interfaz extends JFrame {
 		iniciarComponentes(b);
 	}
 	
-	
+	Bibliotecario bi=new Bibliotecario();
 	
 	private void iniciarComponentes(Boleta b1) {
 		JPanel panel=new JPanel();
@@ -75,5 +78,16 @@ public class Interfaz extends JFrame {
 		etiqueta7.setBounds(50, 260, 300, 30);
 		etiqueta7.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta7);
+		
+		JButton devolverLibro=new JButton("Devolver libro");
+		devolverLibro.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				bi.devolverLibro(b1.getCodigo(), b1.getCodigoBoleta());
+				
+			}
+		});
+		
 	}
 }

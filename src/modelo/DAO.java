@@ -20,11 +20,11 @@ public class DAO {
             stm.setString(1, b.getNombreUsuario());
             stm.setString(2, b.getCedulaUsuario());
             stm.setInt(3, b.getCodigo());
-            stm.setInt(4, b.getCodigoBoleta());
-            stm.setString(5, b.getNombreLibro());
-            stm.setDate(6,  b.convert(b.getFechaPrestamo()));
-            stm.setDate(7, b.convert(b.getFechaEntrega()));
-            stm.setBoolean(8, b.isEstado());
+           
+            stm.setString(4, b.getNombreLibro());
+            stm.setDate(5,  b.convert(b.getFechaPrestamo()));
+            stm.setDate(6, b.convert(b.getFechaEntrega()));
+            stm.setBoolean(7, b.isEstado());
             stm.execute();
             System.out.println("Registro exitoso");
             

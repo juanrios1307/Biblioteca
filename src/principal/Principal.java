@@ -10,35 +10,40 @@ public class Principal {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
-				Bibliotecario bi=new Bibliotecario();
+				InterfazMain main=new InterfazMain();
+				main.setVisible(true);
+				
+			/*	Bibliotecario bi=new Bibliotecario();
 				
 				bi.buscarBoleta(1);
 				
 				bi.buscarLibro(4444);
 				
-				Interfaz i1=new Interfaz(bi.buscarBoleta(1));
+				
+				InterfazMostrarBoleta i1=new InterfazMostrarBoleta(bi.buscarBoleta(1));
 				
 				Boleta b=new Boleta();
 				
 				Date d=new Date();
 				d.getDate();
 				
-				/*b.setNombreUsuario("Juan");
+				b.setNombreUsuario("Juan");
 				b.setCedulaUsuario("1234");
 				b.setCodigo(4444);
-				b.setCodigoBoleta(2);
 				b.setNombreLibro("la hormiga");
 				b.setFechaEntrega(d);
 				b.setFechaPrestamo(d);
 				b.setEstado(false);
 				
-				bi.addBoleta(b);*/
+				bi.addBoleta(b);
 				
 				i1.setVisible(true);
 				
 				
 				
-				bi.devolverLibro(b.getCodigo(), b.getCodigoBoleta());
+				bi.devolverLibro(b.getCodigo(), b.getCodigoBoleta());*/
+				
+				
 				
 		
 	}
