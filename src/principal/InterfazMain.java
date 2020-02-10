@@ -99,7 +99,7 @@ public class InterfazMain extends JFrame {
 				
 			}
 		});
-		buscarBoleta.setBounds(340, 130, 135, 30);
+		buscarBoleta.setBounds(340, 130, 130, 30);
 		buscarBoleta.setHorizontalAlignment(SwingConstants.CENTER);
 		buscarBoleta.setFont(new Font("arial",Font.ITALIC,15));
 		panel.add(buscarBoleta);
