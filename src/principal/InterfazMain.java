@@ -94,6 +94,7 @@ public class InterfazMain extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				b.setCodigoBoleta(Integer.parseInt(codBoleta.getText()));
 				InterfazMostrarBoleta i= new InterfazMostrarBoleta(bi.buscarBoleta(b.getCodigoBoleta()));
 				i.setVisible(true);
 				
@@ -132,7 +133,7 @@ public class InterfazMain extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				InterfazMostrarLibro i=new InterfazMostrarLibro(/*bi.buscarLibro(l.getCodigo())*/);
+				InterfazMostrarLibro i=new InterfazMostrarLibro(/*bi.buscarLibro(Integer.parseInt(codLibro.getText()))*/);
 				//i.setVisible(true);
 			}
 		});
