@@ -1,5 +1,8 @@
 package biblioteca;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import modelo.DAO;
 public class Bibliotecario {
 	
@@ -20,5 +23,13 @@ public class Bibliotecario {
 	 public boolean devolverLibro(int isbn,int codigoBoleta) {
 		 return dao.devolverLibro(isbn,codigoBoleta);
 	 }
+	 
+	 public Date fechaEntrega(Date fecha){
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(fecha); // Configuramos la fecha que se recibe
+			calendar.add(Calendar.DAY_OF_YEAR, 15);  // numero de días a añadir, o restar en caso de días<0
+			return calendar.getTime(); // Devuelve el objeto Date con los nuevos días añadidos
+		
+			 }
 
 }

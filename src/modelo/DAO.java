@@ -20,7 +20,6 @@ public class DAO {
             stm.setString(1, b.getNombreUsuario());
             stm.setString(2, b.getCedulaUsuario());
             stm.setInt(3, b.getCodigo());
-           
             stm.setString(4, b.getNombreLibro());
             stm.setDate(5,  b.convert(b.getFechaPrestamo()));
             stm.setDate(6, b.convert(b.getFechaEntrega()));

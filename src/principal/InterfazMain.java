@@ -59,7 +59,8 @@ public class InterfazMain extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				InterfazAddBoleta i=new InterfazAddBoleta();
-				//i.setVisible(true);
+				i.setVisible(true);
+				setVisible(false);
 			}
 		});
 		addBoleta.setBounds(210, 70, 250, 30);
@@ -97,7 +98,7 @@ public class InterfazMain extends JFrame {
 				b.setCodigoBoleta(Integer.parseInt(codBoleta.getText()));
 				InterfazMostrarBoleta i= new InterfazMostrarBoleta(bi.buscarBoleta(b.getCodigoBoleta()));
 				i.setVisible(true);
-				
+				setVisible(false);
 			}
 		});
 		buscarBoleta.setBounds(340, 130, 130, 30);
@@ -135,6 +136,7 @@ public class InterfazMain extends JFrame {
 				
 				InterfazMostrarLibro i=new InterfazMostrarLibro(/*bi.buscarLibro(Integer.parseInt(codLibro.getText()))*/);
 				//i.setVisible(true);
+				//setVisible(false);
 			}
 		});
 		buscarlibro.setBounds(340, 180, 120, 30);
