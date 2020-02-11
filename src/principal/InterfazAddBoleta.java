@@ -73,11 +73,11 @@ public class InterfazAddBoleta extends JFrame {
 		etiqueta3.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta3);
 		
-		JLabel etiqueta4=new JLabel();
-		etiqueta4.setText("Código del libro: ");
-		etiqueta4.setBounds(50, 180, 300, 30);
-		etiqueta4.setFont(new Font("arial",Font.BOLD,20));
-		panel.add(etiqueta4);
+		JLabel etiqueta4Cod=new JLabel();
+		etiqueta4Cod.setText("Código del libro: ");
+		etiqueta4Cod.setBounds(50, 180, 300, 30);
+		etiqueta4Cod.setFont(new Font("arial",Font.BOLD,20));
+		panel.add(etiqueta4Cod);
 		
 	}
 	
