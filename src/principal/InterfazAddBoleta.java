@@ -123,19 +123,25 @@ public class InterfazAddBoleta extends JFrame {
 				
 				
 				if(bi.buscarLibro(b.getCodigo()).isDisponible()) {
-					
+					System.out.println(bi.buscarUltimoCodBoleta()+" el libro estaba disponible");
 					bi.prestarLibro(b.getCodigo(), bi.buscarUltimoCodBoleta());
 					
 					JLabel lblprestamo=new JLabel();
 					lblprestamo.setText("Se prestó el libro");
-					lblprestamo.setBounds(150, 330, 200, 20);
+					lblprestamo.setBounds(150, 220, 200, 20);
 					lblprestamo.setHorizontalAlignment(SwingConstants.CENTER);
 					lblprestamo.setFont(new Font("arial",Font.ITALIC,35));
 					panel.add(lblprestamo);
+					
+					InterfazMain i=new InterfazMain();
+					i.setVisible(true);
+					setVisible(false);
+					
 				}else {
+					System.out.println(bi.buscarUltimoCodBoleta()+" el libro no esta disponible");
 					JLabel lblprestamo=new JLabel();
 					lblprestamo.setText("El libro no está diponible");
-					lblprestamo.setBounds(150, 330, 200, 20);
+					lblprestamo.setBounds(150, 220, 200, 20);
 					lblprestamo.setHorizontalAlignment(SwingConstants.CENTER);
 					lblprestamo.setFont(new Font("arial",Font.ITALIC,35));
 					panel.add(lblprestamo);
