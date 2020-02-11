@@ -134,9 +134,9 @@ public class InterfazMain extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				InterfazMostrarLibro i=new InterfazMostrarLibro(/*bi.buscarLibro(Integer.parseInt(codLibro.getText()))*/);
-				//i.setVisible(true);
-				//setVisible(false);
+				InterfazMostrarLibro i=new InterfazMostrarLibro(bi.buscarLibro(Integer.parseInt(codLibro.getText())));
+				i.setVisible(true);
+				setVisible(false);
 			}
 		});
 		buscarlibro.setBounds(340, 180, 120, 30);

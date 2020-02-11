@@ -12,7 +12,6 @@ public class DAO {
     private Boleta boleta=new Boleta();
     private SQLHelper sql=new SQLHelper();
     
-    //Realizar metodos pertinentes y borrar lo que no sirve
     public boolean addBoleta(Boleta b) {
     	try {
             PreparedStatement stm= con.getCon().prepareStatement(sql.addBoleta());
@@ -40,7 +39,28 @@ public class DAO {
        return false;
    }//cerrar guardar boleta
    
-   
+   public int buscarUltimoCodigoBoleta() {
+	   try {
+		PreparedStatement stm=con.getCon().prepareStatement(sql.buscarUltimoCodigo());
+		ResultSet rs=stm.executeQuery();
+		
+		while(rs.next()) {
+			boleta.setCodigoBoleta(rs.getInt(1));
+			
+			return boleta.getCodigoBoleta();
+		}
+		
+		
+		} catch (Exception e) {
+			System.err.println("Error al buscar ultimoCodigo: "+e.getMessage());
+		}finally{
+	        try {
+	            con.cerrarBD();
+	        } catch (Exception e) {
+	        }
+	    }
+		   return 0;
+   }
     
     
     public Libro buscarLibro(int isbn) {
@@ -121,6 +141,9 @@ public class DAO {
                  
                  System.out.println("Se actualizo correctamente el registro"+buscarLibro(isbn).isDisponible());
                  return true;
+            }else {
+            	System.out.println("El libro no está disponible");
+            	return false;
             }
              
         } catch (Exception e) {

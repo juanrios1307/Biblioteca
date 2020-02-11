@@ -11,6 +11,10 @@ public class Bibliotecario {
 	 public boolean addBoleta(Boleta b) {
 	    return dao.addBoleta(b);	
 	 } 
+	 public int buscarUltimoCodBoleta() {
+		 return dao.buscarUltimoCodigoBoleta();
+	 }
+	 
 	 public Libro buscarLibro(int isbn) {
 		 return dao.buscarLibro(isbn);
 	 }

@@ -11,6 +11,10 @@ public class SQLHelper {
     	 return "INSERT INTO "+tablaBoleta+" (usuario,cedula,codigolibro,libro,fechaprestamo,fechadevolucion,estado) VALUES (?,?,?,?,?,?,?);";
     }
     
+    public String buscarUltimoCodigo() {
+    	return "SELECT MAX(codigoboleta) FROM "+tablaBoleta;
+    }
+    
     public String buscarLibro(int isbn) {
 
     	return "SELECT * FROM "+tablaLibro+" WHERE codigo = '"+isbn+"';";
@@ -33,5 +37,7 @@ public class SQLHelper {
     public String devolverLibroTB(int isbn,int codigoboleta) {
     	return "UPDATE "+tablaBoleta+" SET estado=0 WHERE codigoboleta= '"+codigoboleta+"' AND codigolibro='"+isbn+"';";
     }
+    
+    
 
 }

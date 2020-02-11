@@ -104,6 +104,8 @@ public class InterfazAddBoleta extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
+				
 				b.setNombreUsuario(txtNombre.getText());
 				b.setCedulaUsuario(txtCedula.getText());
 				b.setCodigo(Integer.parseInt(txtCodigoLibro.getText()));
@@ -119,9 +121,13 @@ public class InterfazAddBoleta extends JFrame {
 				bi.addBoleta(b);
 				
 				
-				if(bi.prestarLibro(b.getCodigo(), b.getCodigoBoleta())) {
+				
+				if(bi.buscarLibro(b.getCodigo()).isDisponible()) {
+					
+					bi.prestarLibro(b.getCodigo(), bi.buscarUltimoCodBoleta());
+					
 					JLabel lblprestamo=new JLabel();
-					lblprestamo.setText("Se entregó el libro");
+					lblprestamo.setText("Se prestó el libro");
 					lblprestamo.setBounds(150, 330, 200, 20);
 					lblprestamo.setHorizontalAlignment(SwingConstants.CENTER);
 					lblprestamo.setFont(new Font("arial",Font.ITALIC,35));
