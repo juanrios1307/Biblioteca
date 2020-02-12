@@ -12,7 +12,7 @@ import biblioteca.Boleta;
 public class InterfazMostrarBoleta extends JFrame {
 	
 	public InterfazMostrarBoleta(Boleta b) {
-		this.setSize(500, 380);
+		this.setSize(500, 500 );
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setTitle("Boleta");
 		//this.setLocation(400, 150);
@@ -79,15 +79,52 @@ public class InterfazMostrarBoleta extends JFrame {
 		etiqueta7.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta7);
 		
+		JLabel lblprestamo=new JLabel();
+		lblprestamo.setBounds(50, 300, 350, 20);
+		lblprestamo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblprestamo.setFont(new Font("arial",Font.ITALIC,20));
+		panel.add(lblprestamo);
+		
+		JButton btnMain = new JButton();
+		btnMain.setBounds(260, 340, 200,30);
+		btnMain.setText("Menu");
+		btnMain.setEnabled(true);
+		btnMain.setFont(new Font("arial",3,20));
+		btnMain.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				InterfazMain i=new InterfazMain();
+				i.setVisible(true);
+				setVisible(false);
+			}
+		});
+		panel.add(btnMain);
+		
 		JButton devolverLibro=new JButton("Devolver libro");
 		devolverLibro.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				bi.devolverLibro(b1.getCodigo(), b1.getCodigoBoleta());
+				if ((!bi.buscarLibro(b1.getCodigo()).isDisponible()) && bi.buscarBoleta(b1.getCodigoBoleta()).isEstado()) {
+					bi.devolverLibro(b1.getCodigo(), b1.getCodigoBoleta());
+					
+					if (bi.buscarLibro(b1.getCodigo()).isDisponible()) {
+						lblprestamo.setText("El libro fue entregado correctamente");
+					}else {
+						lblprestamo.setText("Hubo un problema al devolver el libro");
+					}
+				}else {
+					lblprestamo.setText("El libro no estaba en prestamo o la boleta no concuerda");
+				}
+				
 				
 			}
 		});
+		devolverLibro.setBounds(30, 340, 200, 30);
+		devolverLibro.setFont(new Font("arial",Font.BOLD,20));
+		panel.add(devolverLibro);
 		
 	}
 }

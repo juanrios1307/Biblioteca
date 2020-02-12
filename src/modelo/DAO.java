@@ -65,7 +65,6 @@ public class DAO {
     
     public Libro buscarLibro(int isbn) {
     	 try {
-             System.out.println(sql.buscarLibro(isbn));
              PreparedStatement stm= con.getCon().prepareStatement(sql.buscarLibro(isbn));
              ResultSet rs=stm.executeQuery();
              
@@ -79,7 +78,7 @@ public class DAO {
                  System.out.println("Libro encontrado");
                  return libro;
              }
-             System.out.println("Libro encontrado 2");
+             
              
          } catch (Exception e) {
              System.err.println("Error al buscar registro: "+e.getMessage());
@@ -94,7 +93,6 @@ public class DAO {
     
     public Boleta buscarBoleta(int codBoleta) {
    	 try {
-            System.out.println(sql.buscarBoleta(codBoleta));
             PreparedStatement stm= con.getCon().prepareStatement(sql.buscarBoleta(codBoleta));
             ResultSet rs=stm.executeQuery();
             
@@ -112,8 +110,7 @@ public class DAO {
                 System.out.println("Boleta Encontrada");
                 return boleta;
             }
-            System.out.println("Boleta Encontrada 2");
-            
+           
         } catch (Exception e) {
             System.err.println("Error al buscar registro: "+e.getMessage());
         }finally{
@@ -128,7 +125,6 @@ public class DAO {
     
     public boolean prestarLibro(int isbn,int codigoBoleta) {
     	try {
-    		System.out.println("libro;: "+buscarLibro(isbn).isDisponible());
             if(buscarLibro(isbn).isDisponible()) {
             	 PreparedStatement stmL= con.getCon().prepareStatement(sql.prestarLibroTL(isbn));
                  
@@ -139,7 +135,7 @@ public class DAO {
                  
                  stmB.executeUpdate();
                  
-                 System.out.println("Se actualizo correctamente el registro"+buscarLibro(isbn).isDisponible());
+                 System.out.println("Se actualizo correctamente el registro");
                  return true;
             }else {
             	System.out.println("El libro no está disponible");

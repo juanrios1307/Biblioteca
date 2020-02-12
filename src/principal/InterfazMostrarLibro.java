@@ -1,6 +1,11 @@
 package principal;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -67,6 +72,23 @@ public class InterfazMostrarLibro extends JFrame{
 		etiqueta8.setBounds(50, 280, 300, 30);
 		etiqueta8.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta8);
+		
+		JButton btnMain = new JButton();
+		btnMain.setBounds(260, 280, 200,40);
+		btnMain.setText("Menu");
+		btnMain.setEnabled(true);
+		btnMain.setFont(new Font("arial",3,20));
+		btnMain.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				InterfazMain i=new InterfazMain();
+				i.setVisible(true);
+				setVisible(false);
+			}
+		});
+		panel.add(btnMain);
 		
 		
 	}

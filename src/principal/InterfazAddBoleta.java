@@ -52,6 +52,8 @@ public class InterfazAddBoleta extends JFrame {
 		panel.setLayout(null);
 		this.getContentPane().add(panel);
 	}
+	
+	
 	private void colocarEtiquetas() {
 		
 		JLabel etiqueta=new JLabel();
@@ -93,10 +95,33 @@ public class InterfazAddBoleta extends JFrame {
 		JTextField txtCodigoLibro=new JTextField();
 		txtCodigoLibro.setBounds(270, 180, 170, 30);
 		panel.add(txtCodigoLibro);
-
+		
+		JLabel lblprestamo=new JLabel();
+		lblprestamo.setBounds(150, 220, 350, 20);
+		lblprestamo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblprestamo.setFont(new Font("arial",Font.ITALIC,20));
+		panel.add(lblprestamo);
+		
+		
+		JButton btnMain = new JButton();
+		btnMain.setBounds(260, 280, 200,40);
+		btnMain.setText("Menu");
+		btnMain.setEnabled(true);
+		btnMain.setFont(new Font("arial",3,20));
+		btnMain.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				InterfazMain i=new InterfazMain();
+				i.setVisible(true);
+				setVisible(false);
+			}
+		});
+		panel.add(btnMain);
 	
 		JButton btnGuardar = new JButton();
-		btnGuardar.setBounds(100, 280, 300,40);
+		btnGuardar.setBounds(30, 280, 200,40);
 		btnGuardar.setText("Confirmar");
 		btnGuardar.setEnabled(true);
 		btnGuardar.setFont(new Font("arial",3,20));
@@ -126,30 +151,18 @@ public class InterfazAddBoleta extends JFrame {
 					System.out.println(bi.buscarUltimoCodBoleta()+" el libro estaba disponible");
 					bi.prestarLibro(b.getCodigo(), bi.buscarUltimoCodBoleta());
 					
-					JLabel lblprestamo=new JLabel();
-					lblprestamo.setText("Se prestó el libro");
-					lblprestamo.setBounds(150, 220, 200, 20);
-					lblprestamo.setHorizontalAlignment(SwingConstants.CENTER);
-					lblprestamo.setFont(new Font("arial",Font.ITALIC,35));
-					panel.add(lblprestamo);
-					
-					InterfazMain i=new InterfazMain();
-					i.setVisible(true);
-					setVisible(false);
+					lblprestamo.setText("El libro fue prestado");
 					
 				}else {
 					System.out.println(bi.buscarUltimoCodBoleta()+" el libro no esta disponible");
-					JLabel lblprestamo=new JLabel();
-					lblprestamo.setText("El libro no está diponible");
-					lblprestamo.setBounds(150, 220, 200, 20);
-					lblprestamo.setHorizontalAlignment(SwingConstants.CENTER);
-					lblprestamo.setFont(new Font("arial",Font.ITALIC,35));
-					panel.add(lblprestamo);
+					lblprestamo.setText("El libro no esta disponible");
 				}
 			}
 		});
 		panel.add(btnGuardar);
 	}
+	
+	
 	
 	
 

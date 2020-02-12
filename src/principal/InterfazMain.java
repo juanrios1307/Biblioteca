@@ -145,4 +145,6 @@ public class InterfazMain extends JFrame {
 		panel.add(buscarlibro);
 		
 	}
+	
+	
 }
