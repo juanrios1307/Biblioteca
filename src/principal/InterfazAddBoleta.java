@@ -154,7 +154,7 @@ public class InterfazAddBoleta extends JFrame {
 					lblprestamo.setText("El libro fue prestado");
 					
 				}else {
-					System.out.println(bi.buscarUltimoCodBoleta()+" el libro no esta disponible");
+					System.out.println("El libro no esta disponible");
 					lblprestamo.setText("El libro no está disponible");
 				}
 			}
